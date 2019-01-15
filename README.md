@@ -5,8 +5,8 @@
 
 ## TO DO
 
-- [ ] Question 10
-- [ ] Question 11
+- [x] Question 10
+- [x] Question 11
 - [ ] Question 12
 
 ### To Do (Bonus)
@@ -32,3 +32,7 @@
 - **Question 11 :** Écrivez un petit programme de test prenant un argument en ligne de commande, et affichant tous les noms et coordonnées géographiques des points dont le nom ressemble à (au sens du LIKE SQL) l'argument. À titre d'exemple, un tel programme appelé sur la chaîne
 
 - **Question 12 :** Affichez l'ensemble des routes et des bâtiments autour de Grenoble (longitudes comprises entre 5.7 et 5.8, et latitudes comprises entre 45.1 et 45.2).
+
+
+
+psql -U castella -d osm -h ensibd.imag.fr
