@@ -1,4 +1,4 @@
-package test;
+package geo.ensimag;
 
 import java.awt.Color;
 import java.sql.Connection;
@@ -13,8 +13,8 @@ import geoexplorer.gui.MapPanel;
 import geoexplorer.gui.Point;
 import geoexplorer.gui.Polygon;
 
-public class Question12 {
-	
+public class GrenobleMap {
+
 	public static LineString LinefromText(String text, Color color) {
 		//String srid= text.split(";")[0].split("=")[1];
 		  String[] polygon = text.split(";")[1].substring(11, text.split(";")[1].length()-1).split(",");
@@ -39,16 +39,16 @@ public class Question12 {
 		}
 		return po;
 	}
-	
+
 public static void main(String[] args) {
 	MapPanel mp = new MapPanel(919275.0, 6457425.5, 5000);
 	Connection c = Utils.getConnection();
 	  String grenoble="ST_GeomFromText('POLYGON((5.8 45.1, 5.7 45.1,5.7 45.2, 5.8 45.2, 5.8 45.1))',4326)";
-	  String q = " select ST_TRANSFORM(bbox,2154) as bboxx , tags->'highway' as hw, ST_TRANSFORM(linestring,2154) as ls from ways where ST_Contains("+ grenoble +", bbox ) and tags->'name'!='Grenoble' limit 5000";
+	  String q = " select ST_TRANSFORM(bbox,2154) as bboxx , tags->'highway' as hw, ST_TRANSFORM(linestring,2154) as ls from ways where ST_Contains("+ grenoble +", bbox )";
 	  System.out.println(q);
 	  try {
 		  Statement st = c.createStatement();
-		  
+
 		ResultSet rs = st.executeQuery(q);
 
 		while (rs.next()) {

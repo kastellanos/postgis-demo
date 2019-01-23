@@ -1,4 +1,4 @@
-package test;
+package geo.ensimag.tests;
 
 import java.io.BufferedReader;
 import java.io.IOException;
