@@ -10,5 +10,14 @@ Code
 ```
 - **Question 12 : **
 ```
-Code
+ST_GeomFromText('POINT(5.7 45.1)', 4326)
+
+5.8 45.1 arriba derecha
+5.7 45.1 abajo derecha
+5.8 45.2 arriba izquierda
+5.7 45.2 abajo izquierda
+
+select ST_GeomFromText('POLYGON((5.8 45.1, 5.7 45.1,5.7 45.2, 5.8 45.2, 5.8 45.1))',4326);
+
+select
 ```

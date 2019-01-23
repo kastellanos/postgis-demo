@@ -7,7 +7,7 @@
 
 - [x] Question 10
 - [x] Question 11
-- [ ] Question 12
+- [x] Question 12
 
 ### To Do (Bonus)
 
