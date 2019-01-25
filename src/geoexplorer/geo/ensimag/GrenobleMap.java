@@ -41,7 +41,8 @@ public class GrenobleMap {
 	}
 
 public static void main(String[] args) {
-	MapPanel mp = new MapPanel(919275.0, 6457425.5, 5000);
+	MapPanel mp = new MapPanel(918058.0882352941, 6457083.5882352935
+, 5000);
 	Connection c = Utils.getConnection();
 	  String grenoble="ST_GeomFromText('POLYGON((5.8 45.1, 5.7 45.1,5.7 45.2, 5.8 45.2, 5.8 45.1))',4326)";
 	  String q = " select ST_TRANSFORM(bbox,2154) as bboxx , tags->'highway' as hw, ST_TRANSFORM(linestring,2154) as ls from ways where ST_Contains("+ grenoble +", bbox )";
@@ -53,11 +54,11 @@ public static void main(String[] args) {
 
 		while (rs.next()) {
 			String ls = rs.getObject("ls").toString();
-			if(rs.getObject("hw") != null) {
-				mp.addPrimitive(LinefromText(ls, Color.GREEN));
-			}else {
+			// if(rs.getObject("hw") != null) {
+			// 	mp.addPrimitive(LinefromText(ls, Color.GREEN));
+			// }else {
 				mp.addPrimitive(LinefromText(ls, Color.BLACK));
-			}
+			// }
 		}
 		GeoMainFrame g = new GeoMainFrame("g", mp);
 	} catch (SQLException e) {
